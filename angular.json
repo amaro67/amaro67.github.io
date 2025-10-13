@@ -56,7 +56,7 @@
               "outputHashing": "all"
             },
             "github-pages": {
-              "baseHref": "/cv-portfolio/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
