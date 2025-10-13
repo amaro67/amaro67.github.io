@@ -1,0 +1,158 @@
+/* Masculine CV Container */
+.cv-container {
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 20s ease infinite;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cv-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: morphing 25s ease-in-out infinite;
+}
+
+.cv-container::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(30, 58, 138, 0.2), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(6, 182, 212, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(16, 185, 129, 0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(59, 130, 246, 0.2), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(30, 58, 138, 0.2), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  pointer-events: none;
+  z-index: 0;
+  animation: particleFloat 25s linear infinite;
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Enhanced Section Styling */
+.section {
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+  margin: var(--spacing-xl) 0;
+}
+
+.section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(30px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.section:nth-child(even)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--neon-gradient);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.section:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Floating Elements */
+.section::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  background: var(--neon-gradient);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+.section:nth-child(odd)::after {
+  top: 60%;
+  left: 10%;
+  animation-delay: -4s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .section:nth-child(even),
+  .section:nth-child(odd) {
+    margin: var(--spacing-sm) 0;
+    border-radius: var(--radius-lg);
+  }
+  
+  .section::after {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section::after {
+    width: 40px;
+    height: 40px;
+  }
+}

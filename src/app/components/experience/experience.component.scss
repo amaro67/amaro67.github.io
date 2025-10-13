@@ -1,0 +1,336 @@
+/* Experience Section Styles */
+.experience-container {
+  padding: var(--spacing-xxl) 0;
+}
+
+.experience-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Experience Grid */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Experience Item */
+.experience-item {
+  position: relative;
+}
+
+/* Experience Card */
+.experience-card {
+  background: var(--glass-gradient);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-medium);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--neon-gradient);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.company-logo {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+}
+
+.company-info {
+  flex: 1;
+}
+
+.job-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 0 0 var(--spacing-xs) 0;
+  line-height: 1.2;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.experience-period {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.period {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background: rgba(6, 182, 212, 0.1);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  display: inline-block;
+  width: fit-content;
+}
+
+.duration {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* Card Content */
+.card-content {
+  padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xl);
+}
+
+.experience-description {
+  margin-bottom: var(--spacing-lg);
+}
+
+.experience-description p {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+}
+
+.achievements {
+  margin-top: var(--spacing-md);
+}
+
+.achievements h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0 0 var(--spacing-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.achievements h5::before {
+  content: '🎯';
+  font-size: 1.2rem;
+}
+
+.achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements li {
+  color: var(--text-light);
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-lg);
+  position: relative;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.achievements li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  top: 2px;
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-tag {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--accent-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tech-tag:hover::before {
+  left: 100%;
+}
+
+.tech-tag:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-container {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .experience-content {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .experience-grid {
+    gap: var(--spacing-lg);
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .job-title {
+    font-size: 1.2rem;
+  }
+  
+  .company-name {
+    font-size: 1rem;
+  }
+  
+  .card-content {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+  }
+  
+  .experience-period {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+  
+  .period {
+    font-size: 0.9rem;
+  }
+  
+  .duration {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-container {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .card-header {
+    padding: var(--spacing-md);
+  }
+  
+  .card-content {
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  }
+  
+  .job-title {
+    font-size: 1.1rem;
+  }
+  
+  .company-name {
+    font-size: 0.95rem;
+  }
+  
+  .experience-description p {
+    font-size: 0.95rem;
+  }
+  
+  .achievements li {
+    font-size: 0.9rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: var(--spacing-xs);
+  }
+  
+  .tech-stack {
+    gap: var(--spacing-xs);
+  }
+}
