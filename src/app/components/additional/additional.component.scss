@@ -1,297 +1,216 @@
-/* Additional Information Section */
+/* ── Additional container ───────────────────────────── */
 .additional-container {
-  padding: var(--spacing-xxl) 0;
-  background: var(--bg-dark) !important;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+  padding: var(--s-20) 0;
 }
 
 .additional-content {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--s-6);
 }
 
-/* Section Header */
+/* ── Section header ─────────────────────────────────── */
 .section-header {
-  text-align: center;
-  margin-bottom: var(--spacing-xxl);
+  margin-bottom: var(--s-12);
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
-  color: var(--text-light);
-  margin-bottom: var(--spacing-sm);
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
+  margin-bottom: var(--s-3);
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-/* Additional Grid */
+/* ── Grid ───────────────────────────────────────────── */
 .additional-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-xl);
+  gap: var(--s-4);
 }
 
-/* Additional Cards */
+/* ── Card ───────────────────────────────────────────── */
 .additional-card {
-  background: var(--glass-gradient);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-xl);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  transition: border-color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-bright);
+  }
 }
 
-.additional-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--primary-gradient);
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
-}
-
-.additional-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(59, 130, 246, 0.3);
-}
-
-/* Card Header */
+/* ── Card header ────────────────────────────────────── */
 .card-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  gap: var(--s-3);
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--border);
 }
 
 .card-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--primary-gradient);
-  border-radius: var(--radius-lg);
+  width: 32px;
+  height: 32px;
+  background: rgba(129,140,248,0.1);
+  border: 1px solid rgba(129,140,248,0.2);
+  border-radius: var(--r-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--indigo);
   flex-shrink: 0;
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--text-light);
+  color: var(--text);
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-/* Card Content */
-.card-content {
-  position: relative;
-  z-index: 1;
-}
+.card-content { position: relative; }
 
-/* Course List */
+/* ── Course list ────────────────────────────────────── */
 .course-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 0;
 }
 
 .course-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--border);
 
-.course-item:last-child {
-  border-bottom: none;
+  &:last-child { border-bottom: none; }
 }
 
 .course-name {
-  font-weight: 600;
-  color: var(--text-light);
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .course-platform {
-  color: var(--accent-color);
-  font-size: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--indigo);
   font-weight: 500;
 }
 
-/* Language List */
+/* ── Language list ──────────────────────────────────── */
 .language-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 0;
 }
 
 .language-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--border);
 
-.language-item:last-child {
-  border-bottom: none;
+  &:last-child { border-bottom: none; }
 }
 
 .language-name {
-  font-weight: 600;
-  color: var(--text-light);
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .language-level {
-  color: var(--accent-color);
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 4px 12px;
-  background: rgba(6, 182, 212, 0.1);
-  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(129,140,248,0.1);
+  color: var(--indigo);
+  border: 1px solid rgba(129,140,248,0.2);
 }
 
-/* Interests List */
+/* ── Interests ──────────────────────────────────────── */
 .interests-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-sm);
+  gap: var(--s-2);
 }
 
-.interest-item {
-  flex: 0 0 auto;
-}
+.interest-item { flex: 0 0 auto; }
 
 .interest-tag {
   display: inline-block;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background: var(--primary-gradient);
-  color: white;
-  border-radius: var(--radius-lg);
-  font-size: 0.9rem;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 12px;
+  border-radius: 100px;
+  font-size: 0.8rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  background: var(--surface-hover);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: var(--text);
+    border-color: var(--border-bright);
+  }
 }
 
-.interest-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-/* Achievement List */
+/* ── Achievements ───────────────────────────────────── */
 .achievement-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--s-4);
 }
 
 .achievement-item {
-  padding: var(--spacing-md);
-  background: rgba(59, 130, 246, 0.05);
-  border-radius: var(--radius-md);
-  border-left: 4px solid var(--accent-color);
+  padding: var(--s-4) var(--s-5);
+  background: rgba(129,140,248,0.04);
+  border-radius: var(--r-md);
+  border-left: 3px solid var(--indigo);
 }
 
 .achievement-title {
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--text-light);
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-xs);
+  color: var(--text);
+  margin-bottom: var(--s-1);
 }
 
 .achievement-event {
+  font-size: 0.8rem;
   color: var(--text-muted);
-  font-size: 0.95rem;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .additional-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-  }
-}
-
+/* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 768px) {
-  .additional-container {
-    padding: var(--spacing-xl) 0;
-  }
-  
-  .additional-content {
-    padding: 0 var(--spacing-sm);
-  }
-  
   .additional-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-  
-  .additional-card {
-    padding: var(--spacing-lg);
-  }
-  
-  .card-header {
-    gap: var(--spacing-sm);
-  }
-  
-  .card-icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .card-title {
-    font-size: 1.3rem;
-  }
-  
-  .interests-list {
-    gap: var(--spacing-xs);
-  }
-  
-  .interest-tag {
-    font-size: 0.85rem;
-    padding: 6px 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .additional-card {
-    padding: var(--spacing-md);
-  }
-  
-  .course-item,
-  .language-item {
+  .additional-container { padding: var(--s-12) 0; }
+  .additional-content { padding: 0 var(--s-4); }
+
+  .course-item, .language-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--spacing-xs);
-  }
-  
-  .course-platform,
-  .language-level {
-    align-self: flex-end;
+    gap: var(--s-2);
   }
 }

@@ -1,336 +1,212 @@
-/* Experience Section Styles */
-.experience-container {
-  padding: var(--spacing-xxl) 0;
+/* ── Experience container ───────────────────────────── */
+.exp-container {
+  padding: var(--s-20) 0;
 }
 
-.experience-content {
-  max-width: 1200px;
+.exp-inner {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--s-6);
 }
 
-/* Section Header */
+/* ── Section header ─────────────────────────────────── */
 .section-header {
-  text-align: center;
-  margin-bottom: var(--spacing-xxl);
+  margin-bottom: var(--s-12);
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  margin-bottom: var(--s-3);
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: var(--s-3);
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 1rem;
+  color: var(--text-muted);
 }
 
-/* Experience Grid */
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Experience Item */
-.experience-item {
-  position: relative;
-}
-
-/* Experience Card */
-.experience-card {
-  background: var(--glass-gradient);
-  backdrop-filter: blur(20px);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-glass);
-  box-shadow: var(--shadow-medium);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-}
-
-.experience-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--neon-gradient);
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
-}
-
-.experience-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(6, 182, 212, 0.3);
-}
-
-/* Card Header */
-.card-header {
+/* ── Timeline ───────────────────────────────────────── */
+.timeline {
   display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
-  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  gap: 0;
 }
 
-.company-logo {
+.tl-entry {
+  display: grid;
+  grid-template-columns: 120px 32px 1fr;
+  gap: 0 var(--s-4);
+  align-items: start;
+  position: relative;
+}
+
+/* ── Date column ────────────────────────────────────── */
+.tl-left {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
+}
+
+.tl-period {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ── Dot & line column ──────────────────────────────── */
+.tl-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tl-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--border-bright);
+  flex-shrink: 0;
+  margin-top: 4px;
+  z-index: 1;
+
+  &.active {
+    background: var(--indigo);
+    border-color: var(--indigo);
+    box-shadow: 0 0 10px rgba(129,140,248,0.5);
+  }
+}
+
+.tl-line {
+  width: 1px;
+  flex: 1;
+  min-height: 32px;
+  background: linear-gradient(to bottom, var(--border-bright) 0%, transparent 100%);
+  margin-top: 4px;
+}
+
+/* ── Card ───────────────────────────────────────────── */
+.tl-card {
+  padding: 0 0 var(--s-10) var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.tl-entry:last-child .tl-card {
+  padding-bottom: var(--s-4);
+}
+
+.tl-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-medium);
+  gap: var(--s-3);
+  flex-wrap: wrap;
 }
 
-.company-info {
-  flex: 1;
-}
-
-.job-title {
-  font-size: 1.4rem;
+.tl-role {
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--text-light);
-  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--text);
+  margin: 0;
   line-height: 1.2;
 }
 
-.company-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--accent-color);
-  margin: 0 0 var(--spacing-sm) 0;
-}
-
-.experience-period {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.period {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-light);
-  background: rgba(6, 182, 212, 0.1);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(6, 182, 212, 0.2);
+.tl-badge {
   display: inline-block;
-  width: fit-content;
-}
-
-.duration {
-  font-size: 0.85rem;
-  color: #3b82f6;
-  font-weight: 500;
-}
-
-/* Card Content */
-.card-content {
-  padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xl);
-}
-
-.experience-description {
-  margin-bottom: var(--spacing-lg);
-}
-
-.experience-description p {
-  color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: var(--spacing-md);
-  font-size: 1rem;
-}
-
-.achievements {
-  margin-top: var(--spacing-md);
-}
-
-.achievements h5 {
-  font-size: 1rem;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 0.68rem;
   font-weight: 600;
-  color: var(--accent-color);
-  margin: 0 0 var(--spacing-sm) 0;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &.current {
+    background: rgba(52, 211, 153, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+  }
+
+  &.freelance {
+    background: rgba(129, 140, 248, 0.1);
+    color: var(--indigo);
+    border: 1px solid rgba(129, 140, 248, 0.25);
+  }
+
+  &.internship {
+    background: rgba(251, 191, 36, 0.08);
+    color: var(--amber);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
 }
 
-.achievements h5::before {
-  content: '🎯';
-  font-size: 1.2rem;
-}
-
-.achievements ul {
-  list-style: none;
-  padding: 0;
+.tl-company {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--indigo);
   margin: 0;
 }
 
-.achievements li {
-  color: var(--text-light);
-  margin-bottom: var(--spacing-sm);
-  padding-left: var(--spacing-lg);
-  position: relative;
-  line-height: 1.6;
-  font-size: 0.95rem;
+.tl-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 600px;
 }
 
-.achievements li::before {
-  content: '▶';
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-  font-size: 0.8rem;
-  top: 2px;
-}
-
-/* Tech Stack */
-.tech-stack {
+.tl-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: var(--s-2);
+  margin-top: var(--s-1);
 }
 
-.tech-tag {
-  background: rgba(6, 182, 212, 0.1);
-  color: var(--accent-color);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
+/* ── Mobile period label ─────────────────────────────── */
+.tl-period-mobile {
+  display: none;
+  font-size: 0.72rem;
   font-weight: 500;
-  border: 1px solid rgba(6, 182, 212, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
-.tech-tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
-  transition: left 0.5s;
-}
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .tl-entry {
+    grid-template-columns: 24px 1fr;
+  }
 
-.tech-tag:hover::before {
-  left: 100%;
-}
+  .tl-left {
+    display: none;
+  }
 
-.tech-tag:hover {
-  background: rgba(6, 182, 212, 0.2);
-  border-color: rgba(6, 182, 212, 0.4);
-  transform: translateY(-2px);
-}
+  .tl-card {
+    padding-left: var(--s-4);
+    padding-bottom: var(--s-8);
+  }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .experience-container {
-    padding: var(--spacing-xl) 0;
-  }
-  
-  .experience-content {
-    padding: 0 var(--spacing-sm);
-  }
-  
-  .experience-grid {
-    gap: var(--spacing-lg);
-  }
-  
-  .card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
-  }
-  
-  .company-logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .job-title {
-    font-size: 1.2rem;
-  }
-  
-  .company-name {
-    font-size: 1rem;
-  }
-  
-  .card-content {
-    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
-  }
-  
-  .experience-period {
-    flex-direction: row;
-    gap: var(--spacing-sm);
-    align-items: center;
-  }
-  
-  .period {
-    font-size: 0.9rem;
-  }
-  
-  .duration {
-    font-size: 0.8rem;
+  .tl-period-mobile {
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
-  .experience-container {
-    padding: var(--spacing-lg) 0;
-  }
-  
-  .card-header {
-    padding: var(--spacing-md);
-  }
-  
-  .card-content {
-    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
-  }
-  
-  .job-title {
-    font-size: 1.1rem;
-  }
-  
-  .company-name {
-    font-size: 0.95rem;
-  }
-  
-  .experience-description p {
-    font-size: 0.95rem;
-  }
-  
-  .achievements li {
-    font-size: 0.9rem;
-  }
-  
-  .tech-tag {
-    font-size: 0.8rem;
-    padding: var(--spacing-xs);
-  }
-  
-  .tech-stack {
-    gap: var(--spacing-xs);
-  }
+  .exp-container { padding: var(--s-12) 0; }
+  .exp-inner { padding: 0 var(--s-4); }
 }
