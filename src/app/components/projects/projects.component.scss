@@ -176,6 +176,23 @@
   transform: translateY(-2px);
 }
 
+/* AI Badge */
+.project-ai-badge {
+  margin-top: var(--spacing-sm);
+}
+
+.ai-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.1));
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 /* Project Links */
 .project-links {
   display: flex;
