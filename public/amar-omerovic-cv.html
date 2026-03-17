@@ -289,13 +289,73 @@
       margin-top: 2px;
     }
 
+    /* ── Prevent mid-entry page breaks ─────── */
+    .cv-entry      { break-inside: avoid; }
+    .cv-section    { break-inside: avoid; }
+    .skill-group   { break-inside: avoid; }
+    .lang-item     { break-inside: avoid; }
+
     /* ── Print ──────────────────────────────── */
     @media print {
-      body { background: white; }
+      body { background: white; font-size: 11px; }
       .print-btn { display: none; }
+
       .cv-page { margin: 0; border-radius: 0; box-shadow: none; max-width: 100%; }
+
+      /* Preserve background colours */
+      .cv-header,
+      .cv-sidebar,
+      .cv-summary-row:nth-child(odd) {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .cv-header { padding: 24px 32px 18px; }
+      .cv-name   { font-size: 1.75rem; }
+      .cv-title  { margin-bottom: 14px; }
+      .cv-contacts { gap: 6px 16px; }
+
+      /* Single-column body for clean pagination */
+      .cv-body {
+        display: block;
+      }
+
+      .cv-main {
+        padding: 20px 32px;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      /* Sidebar flows below main as a 3-column grid */
+      .cv-sidebar {
+        padding: 16px 32px 20px;
+        background: #fafbff;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 24px;
+        align-items: start;
+      }
+
+      .cv-about   { margin-bottom: 16px; padding: 10px 12px; font-size: 0.82rem; }
+      .cv-section { margin-bottom: 14px; }
+      .cv-section-title { margin-bottom: 8px; padding-bottom: 5px; font-size: 0.58rem; }
+
+      .cv-entry           { margin-bottom: 10px; padding-bottom: 10px; }
+      .cv-entry-role      { font-size: 0.84rem; }
+      .cv-entry-company   { font-size: 0.75rem; margin-bottom: 4px; }
+      .cv-entry-desc      { font-size: 0.76rem; line-height: 1.55; }
+      .cv-tags            { margin-top: 4px; gap: 3px; }
+      .cv-tag             { font-size: 0.6rem; padding: 1px 5px; }
+
+      .skill-group        { margin-bottom: 8px; }
+      .skill-group-label  { font-size: 0.62rem; margin-bottom: 4px; }
+      .skill-pill         { font-size: 0.6rem; padding: 1px 5px; }
+      .lang-item          { font-size: 0.76rem; padding: 4px 0; }
+      .lang-level         { font-size: 0.62rem; padding: 1px 6px; }
+      .cv-list-item       { font-size: 0.76rem; }
     }
-    @page { margin: 0; size: A4; }
+
+    @page { margin: 8mm 10mm; size: A4; }
   </style>
 </head>
 <body>
