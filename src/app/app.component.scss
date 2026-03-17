@@ -1,3 +1,46 @@
+/* ── Global custom cursor ───────────────────────────── */
+.cursor-dot {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #818cf8;
+  left: var(--cx, -100px);
+  top: var(--cy, -100px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: left 0.04s linear, top 0.04s linear, opacity 0.25s ease;
+  will-change: left, top;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(129, 140, 248, 0.55);
+  left: var(--cx, -100px);
+  top: var(--cy, -100px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: left 0.18s ease-out, top 0.18s ease-out, opacity 0.3s ease;
+  will-change: left, top;
+}
+
+:host(.cursor-active) {
+  .cursor-dot  { opacity: 1; }
+  .cursor-ring { opacity: 1; }
+}
+
+@media (hover: none) {
+  .cursor-dot,
+  .cursor-ring { display: none; }
+}
+
 /* ── Root layout ────────────────────────────────────── */
 .cv-container {
   min-height: 100vh;

@@ -25,14 +25,8 @@ export class AboutComponent {
     s.setProperty('--my', `${my}`);
   }
 
-  @HostListener('mouseenter')
-  onMouseEnter(): void {
-    this.el.nativeElement.classList.add('is-hovered');
-  }
-
   @HostListener('mouseleave')
   onMouseLeave(): void {
-    this.el.nativeElement.classList.remove('is-hovered');
     const s = this.el.nativeElement.style;
     s.setProperty('--gx', '50%');
     s.setProperty('--gy', '40%');

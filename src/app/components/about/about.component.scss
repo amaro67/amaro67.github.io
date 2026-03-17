@@ -122,50 +122,6 @@
   to { opacity: 1; }
 }
 
-/* ── Custom cursor ──────────────────────────────────── */
-.cursor-dot {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #818cf8;
-  left: var(--gx, 50%);
-  top: var(--gy, 50%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 20;
-  opacity: 0;
-  transition: left 0.04s linear, top 0.04s linear, opacity 0.25s ease;
-  will-change: left, top;
-}
-
-.cursor-ring {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(129, 140, 248, 0.55);
-  left: var(--gx, 50%);
-  top: var(--gy, 50%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 20;
-  opacity: 0;
-  transition: left 0.18s ease-out, top 0.18s ease-out, opacity 0.3s ease;
-  will-change: left, top;
-}
-
-:host(.is-hovered) {
-  .cursor-dot  { opacity: 1; }
-  .cursor-ring { opacity: 1; }
-  .hero-container { cursor: none; }
-}
-
-@media (hover: none) {
-  .cursor-dot,
-  .cursor-ring { display: none; }
-}
-
 /* ── Inner content ──────────────────────────────────── */
 .hero-inner {
   max-width: 760px;
