@@ -153,6 +153,12 @@
     color: var(--amber);
     border: 1px solid rgba(251, 191, 36, 0.2);
   }
+
+  &.edu {
+    background: rgba(34, 211, 238, 0.08);
+    color: var(--cyan);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+  }
 }
 
 .tl-company {
@@ -184,6 +190,27 @@
   font-weight: 500;
   color: var(--text-muted);
   font-family: var(--font-mono);
+}
+
+/* ── Education divider ──────────────────────────────── */
+.tl-section-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin: var(--s-8) 0 var(--s-8) calc(120px + 32px + var(--s-4) * 2 + var(--s-3));
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+}
+
+@media (max-width: 640px) {
+  .tl-section-divider {
+    margin-left: calc(24px + var(--s-4) + var(--s-3));
+  }
 }
 
 /* ── Responsive ─────────────────────────────────────── */
