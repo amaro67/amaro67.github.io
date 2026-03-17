@@ -1,30 +1,41 @@
 <!-- Hero / About Section -->
 <div class="hero-container">
+
+  <!-- Background decoration -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
   <div class="hero-inner">
 
     <!-- Available badge -->
-    <div class="avail-badge fade-in-up">
+    <div class="avail-badge hero-anim" style="--d:0s">
       <span class="avail-dot"></span>
       Open to new opportunities
     </div>
 
     <!-- Name & title -->
-    <h1 class="hero-name fade-in-up">
+    <h1 class="hero-name hero-anim" style="--d:0.12s">
       Hello, I'm<br>
-      <span class="text-gradient">Amar Omerović</span>
+      <span class="name-gradient">Amar Omerović</span>
     </h1>
 
-    <p class="hero-role fade-in-up">Full Stack Developer &amp; AI Engineer</p>
+    <p class="hero-role hero-anim" style="--d:0.24s">
+      Full Stack Developer &amp; AI Engineer<span class="cursor">|</span>
+    </p>
 
     <!-- Description -->
-    <p class="hero-desc fade-in-up">
+    <p class="hero-desc hero-anim" style="--d:0.36s">
       Based in Sarajevo, Bosnia and Herzegovina. I build web applications end-to-end — from Angular and .NET
       to Python-based AI agent systems. Currently working at Innovate Delivery (Slovenia) while building
       AI-powered tools on the side.
     </p>
 
     <!-- Stats -->
-    <div class="hero-stats fade-in-up">
+    <div class="hero-stats hero-anim" style="--d:0.5s">
       <div class="stat">
         <span class="stat-num">4+</span>
         <span class="stat-lbl">Years Experience</span>
@@ -42,7 +53,7 @@
     </div>
 
     <!-- CTAs -->
-    <div class="hero-actions fade-in-up">
+    <div class="hero-actions hero-anim" style="--d:0.64s">
       <a href="#contact" class="btn btn-primary">
         Contact Me
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
